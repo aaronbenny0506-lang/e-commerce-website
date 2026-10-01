@@ -1,0 +1,53 @@
+:root{--ink:#14202b;--mute:#5b6b7a;--bg:#f4f7f9;--card:#fff;--line:#dbe3ea;--brand:#0b5d6b;--sun:#f5b335;--r:10px}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,.logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.bar{position:sticky;top:0;z-index:5;display:flex;gap:12px;align-items:center;padding:12px clamp(16px,4vw,48px);background:var(--card);border-bottom:1px solid var(--line)}
+.logo{font-weight:800;font-size:1.6rem;text-decoration:none;color:var(--brand)}
+#search{flex:1;min-width:0;padding:10px 14px;border:1px solid var(--line);border-radius:var(--r);font:inherit}
+.btn{border:0;border-radius:var(--r);padding:10px 16px;background:var(--brand);color:#fff;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.big{padding:14px 22px}
+.btn:hover{filter:brightness(1.1)}
+#count{background:var(--sun);color:var(--ink);border-radius:99px;padding:0 8px;margin-left:4px}
+main,footer{padding:0 clamp(16px,4vw,48px)}
+.hero{margin:32px 0 16px;padding:clamp(28px,6vw,72px);background:var(--brand);color:#fff;border-radius:16px}
+.hero h1{font-size:clamp(2rem,5.5vw,4rem);line-height:1.05;margin:0 0 12px;max-width:16ch;font-weight:800}
+.hero p{max-width:46ch;margin:0 0 24px;opacity:.9}
+.hero .btn{background:var(--sun);color:var(--ink)}
+.perks{display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--mute);font-size:.95rem}
+h2{font-size:1.6rem;margin:32px 0 12px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}
+.chip{white-space:nowrap;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 14px;cursor:pointer;font:inherit}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;margin:16px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;display:flex;flex-direction:column}
+.card:hover{border-color:var(--brand)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:#e8eef2}
+.card-b{padding:12px;display:flex;flex-direction:column;gap:4px}
+.card h3{margin:0;font-size:1rem}
+.muted{color:var(--mute);font-size:.9rem}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin:32px 0 48px}
+.detail img.main{width:100%;border-radius:var(--r);background:#e8eef2}
+.thumbs{display:flex;gap:8px;margin-top:8px}.thumbs img{width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--line);cursor:pointer}
+.price{font-size:1.8rem;font-weight:700;margin:8px 0}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--card);z-index:10;padding:20px;display:flex;flex-direction:column;gap:12px;box-shadow:-8px 0 24px rgba(0,0,0,.15);overflow-y:auto}
+.drawer[hidden]{display:none}
+.line{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
+.line img{width:56px;height:56px;object-fit:cover;border-radius:6px}
+.qty{display:flex;gap:6px;align-items:center}.qty button{width:28px;height:28px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer}
+.total{font-size:1.2rem;margin-top:auto}
+dialog{border:0;border-radius:14px;padding:24px;width:min(380px,92vw)}
+dialog::backdrop{background:rgba(20,32,43,.5)}
+label{display:block;margin:12px 0;font-weight:600}
+label input{display:block;width:100%;margin-top:4px;padding:10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.err{color:#b3261e;min-height:1.4em;margin:0 0 8px}
+.link{background:none;border:0;color:var(--brand);cursor:pointer;margin-top:12px;font:inherit;text-decoration:underline}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+footer{padding-block:24px;color:var(--mute);border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:560px){#acct{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
