@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcel | Everyday goods, delivered</title>
+<meta name="description" content="Browse home, beauty, fashion and tech essentials. Fast checkout with Stripe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="bar">
+  <a class="logo" href="#/">parcel</a>
+  <input id="search" type="search" placeholder="Search products" aria-label="Search products">
+  <button id="acct" class="btn ghost"></button>
+  <button id="cartBtn" class="btn">Cart <span id="count">0</span></button>
+</header>
+
+<main>
+  <section id="home">
+    <div class="hero">
+      <h1>Everyday things, sorted into one box.</h1>
+      <p>Over 190 products across home, beauty, fashion and tech. Pay securely with Stripe.</p>
+      <a class="btn big" href="#shop">Shop all products</a>
+    </div>
+    <div class="perks"><span>Secure Stripe checkout</span><span>Cart saved on this device</span><span>Free browsing, no account needed</span></div>
+    <h2 id="shop">Shop</h2>
+    <div id="chips" class="chips" role="group" aria-label="Categories"></div>
+    <div id="grid" class="grid" aria-live="polite"></div>
+  </section>
+  <section id="detail" hidden></section>
+</main>
+
+<footer>Parcel is a demo store. Use Stripe test card 4242 4242 4242 4242 at checkout.</footer>
+
+<aside id="drawer" class="drawer" aria-label="Shopping cart" hidden>
+  <div class="row"><h2>Your cart</h2><button class="btn ghost" data-close>Close</button></div>
+  <div id="lines"></div>
+  <div class="row total"><span>Total</span><b id="total"></b></div>
+  <button id="pay" class="btn big">Pay with Stripe</button>
+</aside>
+
+<dialog id="authDlg">
+  <form id="authForm">
+    <h2 id="authTitle"></h2>
+    <label id="nameRow">Name<input name="name" autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Password<input name="password" type="password" minlength="8" required autocomplete="current-password"></label>
+    <p id="authErr" class="err" role="alert"></p>
+    <button class="btn big">Continue</button>
+    <button type="button" id="authSwap" class="link"></button>
+  </form>
+</dialog>
+<div id="toast" role="status"></div>
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>
